@@ -92,11 +92,26 @@
     - Custos de consulta: A consulta de grandes conjuntos de dados de log pode ser complexa e dispendiosa.
 
 ### Boas Práticas de Arquitetura de Log
+
 - Para minimizar os impactos financeiros e maximizar a eficácia do gerenciamento de logs, siga essas boas práticas:
-  - Use as severidades de log corretas para evitar dados de log desnecessários.
-  - Minimize a quantidade de logs de informação e depuração gerados.
-  - Use variáveis de ambiente para definir os níveis de log, permitindo ajustes fáceis entre os ambientes.
-  - Use rotatividade de logs para gerenciar o crescimento do arquivo de log e evitar que ele fique muito grande.
-  - Implemente monitoramento de log para alertar sobre erros e avisos importantes.
-  - Considere o uso de ferramentas de observabilidade para fornecer insights adicionais sobre o comportamento da aplicação.
-  
+    - Use as severidades de log corretas para evitar dados de log desnecessários.
+    - Minimize a quantidade de logs de informação e depuração gerados.
+    - Use variáveis de ambiente para definir os níveis de log, permitindo ajustes fáceis entre os ambientes.
+    - Use rotatividade de logs para gerenciar o crescimento do arquivo de log e evitar que ele fique muito grande.
+    - Implemente monitoramento de log para alertar sobre erros e avisos importantes.
+    - Considere o uso de ferramentas de observabilidade para fornecer insights adicionais sobre o comportamento da
+      aplicação.
+
+## Arquitetura de Log Corporativa
+
+- Em grandes organizações, é comum usar um gerenciamento de log corporativo, que inclui:
+    - API Gateway: Recebe requisições de clientes e as encaminha para o backend.
+    - Gerenciamento de API: Fornece serviços de segurança, cache e limitação de taxa para as APIS.
+    - Identity Provider: Verifica a identidade dos usuários e emite tokens de acesso.
+
+### Conclusão
+
+- O gerenciamento de logs é crucial para garantir o funcionamento confiável e eficiente das aplicações. Ao seguir as
+  boas práticas de arquitetura de log, as organizações podem minimizar os impactos financeiros da negligência de log e
+  obter insights valiosos para melhorar o desempenho e a segurança da aplicação.
+
