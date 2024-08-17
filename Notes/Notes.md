@@ -115,3 +115,85 @@
   boas práticas de arquitetura de log, as organizações podem minimizar os impactos financeiros da negligência de log e
   obter insights valiosos para melhorar o desempenho e a segurança da aplicação.
 
+
+# Padrões Essenciais de REST em APIs
+
+- Os padrões de REST (representational State Transfer) são fundamentais para garantir que APIs sejam consistentes, 
+  fáceis de usar e mantenham uma boa interoperabilidade. Os principais pontos:
+
+1 - **Nomenclatura de APIs:**
+  - Substatantivos no Plural: Utilizar substantivos no plural nos endpoints é uma convenção que melhora a clareza e 
+    a consistência.
+    - Ex: `/usuarios`. um endpoint que lida com um conjunto de recursos, mesmo que apenas um seja retornado.
+  - Sem verbos: Evitar verbos nos URLs, uma vez que os métodos HTTP, já definem a ação a ser tomada.
+
+2 -  **Hierarquia de Recursos**
+  - Estruturar os endpoints de maneira lógica é essencial para refletir a relação entre os recuros e facilita a 
+    entre os recuros e facilita a navegação e entendimento da API. 
+    - Ex: `/clientes/{clienteI/pedidos`. 
+
+3 -  **HTTP Status Code**
+   - Usar corretamente os códigos de status HTTP ajuda os consumidores da API a entenderem o resultado das solicitações.
+     - Ex: 
+       - `200 OK` para sucesso;
+       - `404 Not Found` para recursos inexistentes
+       - `500 Internal Server Error` para falhas no servidor.
+
+4 -  Verbos HTTP
+  - GET: Para obter dados de um recurso.
+  - POST: Para criar novos recursos.
+  - PUT: Para atualizar recursos existentes.
+  - DELETE: Para excluir recursos.
+
+5 -  Idempotência
+  - POST não é idempotente, ou seja, criar o mesmo recurso várias vezes resultará em várias instâncias.
+  - GET, PUT, DELETE são idempotentes, ou seja, executar a mesma operação várias vezes terá o mesmo efeito que 
+    executá-la uma vez.
+
+6 - Controle de URI:
+  - GET: O cliente espeficica o recurso a ser recuperado.
+  - POST: O servidor controla onde e como o recurso é criado.
+
+7 - Documentação API com OpenAPI (Swagger):
+  - Documentar a API com ferramentas como Swagger é crucial. Isso permite criar interface interativas para testar a 
+    API e gerar uma documentação que descreve os endpoints, métodos e parâmetros.
+
+## Benefícios de Seguir os Padrões REST
+- **APIs Estruturadas:** Seguindo essas convenções, suas APIs serão mais organizadas e previsíveis.
+- **Consistência e Interoperabilidade:** APIs bem estruturadas e consistentes facilitam a integração com outros 
+  sistemas. 
+- **Manutentção Simplificada:** Aderir a padrões reconhecidos torna a manutenção e o desenvolvimento de novas 
+  funcionalidades mais simples e menos propenso a erros.
+
+## Boas Práticas de Arquitetura de Log
+- O gerenciamento de logs é uma parte vital do desenvolvimento e manutenção de software, especialmente em ambientes 
+  corporativos.
+  - Severidades de Log:
+    - Erro: Para falhas graves que impedem o funcionamento normal do sistema.
+    - Aviso: Indica problemas que são são críticos, mas que devem ser monitorados.
+    - Informação: Logs que informam sobre o funcionamento normal do sistema.
+    - Depuração: Detalhes técnicos usados durante o desenvolvimento ou troubleshooting:
+  - Níveis de Log recomendados:;
+    - Em produção, é recomendável desativas logs de `depuração` e `informação` para evitar sobrecarga de dados, 
+      focando apenas em `Erro` e `Aviso`.
+  - Impactios Financeiros:
+    - Custos de Armazenamentos e processamento: Grandes volumes de logs podem aumentar significativamente os curos 
+      de armazenamento e processamento.
+    - Custos de replicação e consulta: Logar desnecessarimente pode aumentar os curtos de backup e recuperação de 
+      desasters, além de tornas os logs caros e complexos.
+  - Boas práticas:
+    - Severidades corretas: usar de forma apropriadas para evitar a criação de dados desnecessários
+    - Rotatividade de Log: Para evitar que os arquivos cresçam indefinidamente.
+    - Monitoramenteo de Log: Monitoramento ativo para aletar sobre erroes e avisos.
+  - Arquitetura de Lob corporativo
+    - Em grandes organizações, usar uma arquitetura de log centralizada, como API Gateways e serviços de 
+      gerenciamento de API, é comum para garantir segurança, escalabilidade e desempenho.
+
+## Conclusão
+- Seguir os padrões REST na construção de APIS garente que seu sistema seja robusto, fácil de manter e escalável. Ao 
+  mesmo tempo, implementar uma boa arquitetura de log é essencial para monitorar a saúde da aplicação, evitar 
+  problemas de desempenho e controlar os custos. Esses princípios são especialmente importantes ao trabalhar com 
+  frameworks como Spring Boot, onde a adesão a boas práticas pode facilitar a integração e a operação contínua de 
+  sistemas complexos.
+
+
